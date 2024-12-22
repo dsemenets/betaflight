@@ -102,6 +102,10 @@ static const box_t boxes[CHECKBOX_ITEM_COUNT] = {
     { .boxId = BOXBEEPERMUTE, .boxName = "BEEPER MUTE", .permanentId = 52},
     { .boxId = BOXREADY, .boxName = "READY", .permanentId = 53},
     { .boxId = BOXLAPTIMERRESET, .boxName = "LAP TIMER RESET", .permanentId = 54},
+    { .boxId = BOXMOTOR1, .boxName = "MOTOR1", .permanentId = 55 },
+    { .boxId = BOXMOTOR2, .boxName = "MOTOR2", .permanentId = 56 },
+    { .boxId = BOXMOTOR3, .boxName = "MOTOR3", .permanentId = 57 },
+    { .boxId = BOXMOTOR4, .boxName = "MOTOR4", .permanentId = 58 },
 };
 
 // mask of enabled IDs, calculated on startup based on enabled features. boxId_e is used as bit index
@@ -148,6 +152,14 @@ void serializeBoxNameFn(sbuf_t *dst, const box_t *box)
         sbufWriteString(dst, modeActivationConfig()->box_user_3_name);
     } else if (box->boxId == BOXUSER4 && strlen(modeActivationConfig()->box_user_4_name) > 0) {
         sbufWriteString(dst, modeActivationConfig()->box_user_4_name);
+    } else if (box->boxId == BOXMOTOR1 && strlen(modeActivationConfig()->box_motor_1_name) > 0) {
+        sbufWriteString(dst, modeActivationConfig()->box_motor_1_name);
+    } else if (box->boxId == BOXMOTOR2 && strlen(modeActivationConfig()->box_motor_2_name) > 0) {
+        sbufWriteString(dst, modeActivationConfig()->box_motor_2_name);
+    } else if (box->boxId == BOXMOTOR3 && strlen(modeActivationConfig()->box_motor_3_name) > 0) {
+        sbufWriteString(dst, modeActivationConfig()->box_motor_3_name);
+    } else if (box->boxId == BOXMOTOR4 && strlen(modeActivationConfig()->box_motor_4_name) > 0) {
+        sbufWriteString(dst, modeActivationConfig()->box_motor_4_name);
     } else
 #endif
     {
@@ -312,6 +324,10 @@ void initActiveBoxIds(void)
                 case BOXUSER2:
                 case BOXUSER3:
                 case BOXUSER4:
+                case BOXMOTOR1:
+                case BOXMOTOR2:
+                case BOXMOTOR3:
+                case BOXMOTOR4:
                     BME(box->boxId);
                     break;
                 default:

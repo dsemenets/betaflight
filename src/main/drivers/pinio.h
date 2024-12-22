@@ -23,7 +23,15 @@
 #include <stdbool.h>
 
 #ifndef PINIO_COUNT
-#define PINIO_COUNT 4
+#define PINIO_COUNT 8
+#endif
+
+#ifndef MOTOR_COUNT
+#define MOTOR_COUNT 4
+#endif
+
+#ifndef MOTOR_INITIAL_SPEED
+#define MOTOR_INITIAL_SPEED 1010
 #endif
 
 #define PINIO_CONFIG_OUT_INVERTED 0x80

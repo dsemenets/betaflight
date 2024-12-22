@@ -79,6 +79,10 @@ typedef enum {
     BOXBEEPERMUTE,
     BOXREADY,
     BOXLAPTIMERRESET,
+    BOXMOTOR1,
+    BOXMOTOR2,
+    BOXMOTOR3,
+    BOXMOTOR4,
     CHECKBOX_ITEM_COUNT
 } boxId_e;
 
@@ -129,6 +133,10 @@ typedef struct modeActivationConfig_s {
     char box_user_2_name[MAX_BOX_USER_NAME_LENGTH];
     char box_user_3_name[MAX_BOX_USER_NAME_LENGTH];
     char box_user_4_name[MAX_BOX_USER_NAME_LENGTH];
+    char box_motor_1_name[MAX_BOX_USER_NAME_LENGTH];
+    char box_motor_2_name[MAX_BOX_USER_NAME_LENGTH];
+    char box_motor_3_name[MAX_BOX_USER_NAME_LENGTH];
+    char box_motor_4_name[MAX_BOX_USER_NAME_LENGTH];
 } modeActivationConfig_t;
 
 PG_DECLARE(modeActivationConfig_t, modeActivationConfig);

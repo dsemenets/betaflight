@@ -46,6 +46,22 @@
 #define PINIO4_BOX PERMANENT_ID_NONE
 #endif
 
+#ifndef MOTOR1_BOX
+#define MOTOR1_BOX PERMANENT_ID_NONE
+#endif
+
+#ifndef MOTOR2_BOX
+#define MOTOR2_BOX PERMANENT_ID_NONE
+#endif
+
+#ifndef MOTOR3_BOX
+#define MOTOR3_BOX PERMANENT_ID_NONE
+#endif
+
+#ifndef MOTOR4_BOX
+#define MOTOR4_BOX PERMANENT_ID_NONE
+#endif
+
 PG_REGISTER_WITH_RESET_FN(pinioBoxConfig_t, pinioBoxConfig, PG_PINIOBOX_CONFIG, 1);
 
 void pgResetFn_pinioBoxConfig(pinioBoxConfig_t *config)
@@ -54,6 +70,14 @@ void pgResetFn_pinioBoxConfig(pinioBoxConfig_t *config)
     config->permanentId[1] = PINIO2_BOX;
     config->permanentId[2] = PINIO3_BOX;
     config->permanentId[3] = PINIO4_BOX;
+    config->permanentId[4] = MOTOR1_BOX;
+    config->permanentId[5] = MOTOR2_BOX;
+    config->permanentId[6] = MOTOR3_BOX;
+    config->permanentId[7] = MOTOR4_BOX;
+    config->motor_speed[0] = MOTOR_INITIAL_SPEED;
+    config->motor_speed[1] = MOTOR_INITIAL_SPEED;
+    config->motor_speed[2] = MOTOR_INITIAL_SPEED;
+    config->motor_speed[3] = MOTOR_INITIAL_SPEED;
 }
 
 #endif

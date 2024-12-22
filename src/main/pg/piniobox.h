@@ -26,6 +26,7 @@
 
 typedef struct pinioBoxConfig_s {
     uint8_t permanentId[PINIO_COUNT];
+    uint16_t motor_speed[MOTOR_COUNT];
 } pinioBoxConfig_t;
 
 PG_DECLARE(pinioBoxConfig_t, pinioBoxConfig);
