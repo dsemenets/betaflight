@@ -60,6 +60,8 @@ uint16_t       vtxTableFrequency[VTX_TABLE_MAX_BANDS][VTX_TABLE_MAX_CHANNELS] = 
     { 5705, 5685, 5665, 5645, 5885, 5905, 5925, 5945 }, // Boscam E
     { 5740, 5760, 5780, 5800, 5820, 5840, 5860, 5880 }, // FatShark
     { 5658, 5695, 5732, 5769, 5806, 5843, 5880, 5917 }, // RaceBand
+    { 5362, 5399, 5436, 5473, 5510, 5547, 5584, 5621 }, // L Band
+    { 4990, 5020, 5050, 5080, 5110, 5140, 5170, 5200 }, // X Band
 };
 const char *   vtxTableBandNames[VTX_TABLE_MAX_BANDS + 1] = {
         "--------",
@@ -68,8 +70,10 @@ const char *   vtxTableBandNames[VTX_TABLE_MAX_BANDS + 1] = {
         "BOSCAM E",
         "FATSHARK",
         "RACEBAND",
+        "L BAND",
+        "X BAND",
 };
-char           vtxTableBandLetters[VTX_TABLE_MAX_BANDS + 1] = "-ABEFR";
+char           vtxTableBandLetters[VTX_TABLE_MAX_BANDS + 1] = "-ABEFRLX";
 const char *   vtxTableChannelNames[VTX_TABLE_MAX_CHANNELS + 1] = {
         "-", "1", "2", "3", "4", "5", "6", "7", "8",
 };
